@@ -1,0 +1,56 @@
+local ScreenGui = Instance.new("ScreenGui")
+
+local ToggleBtn = Instance.new("TextButton")
+
+ScreenGui.Parent = game.CoreGui
+
+ToggleBtn.Parent = ScreenGui
+
+ToggleBtn.Size = UDim2.new(0, 150, 0, 50)
+
+ToggleBtn.Position = UDim2.new(0, 10, 0, 10)
+
+ToggleBtn.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+
+ToggleBtn.Text = "BẬT GOD MODE"
+
+ToggleBtn.TextColor3 = Color3.new(1,1,1)
+
+local godModeEnabled = false
+
+ToggleBtn.MouseButton1Click:Connect(function()
+
+    godModeEnabled = not godModeEnabled
+
+    if godModeEnabled then
+
+        ToggleBtn.Text = "GOD MODE: BẬT"
+
+        ToggleBtn.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+
+        
+
+        -- Chạy mã bất tử
+
+        _G.GodLoop = game:GetService("RunService").Heartbeat:Connect(function()
+
+            if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
+
+                game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health = 100
+
+            end
+
+        end)
+
+    else
+
+        ToggleBtn.Text = "GOD MODE: TẮT"
+
+        ToggleBtn.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+
+        if _G.GodLoop then _G.GodLoop:Disconnect() end
+
+    end
+
+end)
+

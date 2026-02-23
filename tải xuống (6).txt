@@ -1,0 +1,135 @@
+local ScreenGui = Instance.new("ScreenGui")
+
+local MainFrame = Instance.new("Frame")
+
+local Title = Instance.new("TextLabel")
+
+local ScrollingFrame = Instance.new("ScrollingFrame")
+
+local UIListLayout = Instance.new("UIListLayout")
+
+local UICorner = Instance.new("UICorner")
+
+-- Thiết lập chính
+
+ScreenGui.Parent = game.CoreGui
+
+MainFrame.Name = "RedzGui"
+
+MainFrame.Parent = ScreenGui
+
+MainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20) -- Nền tối
+
+MainFrame.Position = UDim2.new(0.5, -150, 0.5, -100)
+
+MainFrame.Size = UDim2.new(0, 300, 0, 250)
+
+MainFrame.Active = true
+
+MainFrame.Draggable = true -- Có thể kéo di chuyển
+
+UICorner.CornerRadius = ToolBuffer.new(0, 8)
+
+UICorner.Parent = MainFrame
+
+-- Tiêu đề (Đỏ đặc trưng)
+
+Title.Parent = MainFrame
+
+Title.Size = UDim2.new(1, 0, 0, 40)
+
+Title.BackgroundColor3 = Color3.fromRGB(150, 0, 0) -- Màu đỏ Redz
+
+Title.Text = "HƯNG HUB CLONE"
+
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+Title.TextSize = 20
+
+Title.Font = Enum.Font.GothamBold
+
+local TitleCorner = UICorner:Clone()
+
+TitleCorner.Parent = Title
+
+-- Khu vực chứa nút bấm
+
+ScrollingFrame.Parent = MainFrame
+
+ScrollingFrame.Position = UDim2.new(0, 5, 0, 45)
+
+ScrollingFrame.Size = UDim2.new(0, 290, 0, 200)
+
+ScrollingFrame.BackgroundTransparency = 1
+
+ScrollingFrame.ScrollBarThickness = 4
+
+UIListLayout.Parent = ScrollingFrame
+
+UIListLayout.Padding = UDim.new(0, 5)
+
+-- Hàm tạo nút bấm (Button)
+
+local function CreateButton(name, callback)
+
+    local Button = Instance.new("TextButton")
+
+    Button.Parent = ScrollingFrame
+
+    Button.Size = UDim2.new(1, -10, 0, 35)
+
+    Button.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+
+    Button.Text = name
+
+    Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+    Button.Font = Enum.Font.Gotham
+
+    Button.TextSize = 14
+
+    
+
+    local btnCorner = UICorner:Clone()
+
+    btnCorner.CornerRadius = UDim.new(0, 6)
+
+    btnCorner.Parent = Button
+
+    
+
+    Button.MouseButton1Click:Connect(callback)
+
+end
+
+--- CÀI ĐẶT CÁC CHỨC NĂNG TẠI ĐÂY ---
+
+CreateButton("Tăng Tốc Độ (Speed)", function()
+
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100
+
+    print("Đã bật Speed!")
+
+end)
+
+CreateButton("Nhảy Cao (Jump)", function()
+
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 150
+
+    print("Đã bật Jump!")
+
+end)
+
+CreateButton("Bay (Fly - Sắp có)", function()
+
+    print("Chức năng đang phát triển...")
+
+end)
+
+CreateButton("Tắt GUI", function()
+
+    ScreenGui:Destroy()
+
+end)
+
+print("Redz GUI đã được kích hoạt!")

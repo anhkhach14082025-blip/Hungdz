@@ -23,7 +23,7 @@ end)
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 repeat wait() until game:IsLoaded()
 local Window = Fluent:CreateWindow({
-    Title = "TBoy Roblox Tổng Hợp",
+    Title = "HƯNG Roblox Tổng Hợp",
     SubTitle = "Blox Fruit",
     TabWidth = 157,
     Size = UDim2.fromOffset(450, 300),
@@ -41,7 +41,7 @@ local Tabs = {
 }
     Tabs.Main0:AddButton({
     Title = "Discord",
-    Description = "TBoyRoblox Community",
+    Description = "HUNGRoblox Community",
     Callback = function()
         setclipboard("https://discord.gg/tboyroblox-community-1253927333920899153")
     end
@@ -49,7 +49,7 @@ local Tabs = {
 
     Tabs.Main0:AddButton({
     Title = "Youtuber",
-    Description = "TBoy Roblox",
+    Description = "HƯNG Roblox",
     Callback = function()
         setclipboard("https://www.youtube.com/@TBoyRoblox08")
     end
@@ -57,7 +57,7 @@ local Tabs = {
 
     Tabs.Main0:AddButton({
     Title = "Youtuber",
-    Description = "TBoy Gamer",
+    Description = "HƯNG Gamer",
     Callback = function()
         setclipboard("https://www.youtube.com/@TBoyGamer08")
     end

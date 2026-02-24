@@ -193,7 +193,7 @@ v5.Window = function(v134, v135)
 	v197.Position = UDim2.new(0, 30, 0.05, 0);
 	v197.Size = UDim2.new(0, 255, 0.05, 25);
 	v197.Font = Enum.Font.SourceSansBold;
-	v197.Text = "Ten Roblox Hub";
+	v197.Text =   "Hưng vn Hub";
 	v197.TextSize = 17;
 	v197.TextColor3 = Color3.fromRGB(0, 134, 139);
 	v197.TextXAlignment = Enum.TextXAlignment.Left;
@@ -11960,7 +11960,7 @@ end);
 local v122 = game:GetService("Players");
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = " Hưng vn Hub",
-	Text = "Loading...",
+	Text = "Loading...",*
 	Icon = "rbxthumb://type=Asset&id=83190276951914&w=150&h=150",
 	Duration = 10
 });

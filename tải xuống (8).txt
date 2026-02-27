@@ -1,0 +1,31 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/7Trax/Rayfield/main/source"))()
+
+local Window = Library:CreateWindow({
+
+   Name = "My First Script Hub",
+
+   LoadingTitle = "Đang tải...",
+
+   ConfigSaving = {
+
+      Enabled = true,
+
+      Folder = "MyScriptConfig"
+
+   }
+
+})
+
+local Tab = Window:CreateTab("Chính", 4483362458) -- Biểu tượng home
+
+Tab:CreateButton({
+
+   Name = "Thông báo",
+
+   Callback = function()
+
+       print("Bạn vừa nhấn nút!")
+
+   end,
+
+})
